@@ -13,7 +13,7 @@
         name: America/New_York
 
     - name: Install system packages
-      apt:
+      package:
         name: "{{ item }}"
         state: present
         update_cache: yes
@@ -32,14 +32,14 @@
   tasks:
     # - name: Disable GUI and enable CLI auto-login
     #   become: yes
-    #   command: raspi-config nonint do_boot_behaviour 
+    #   command: raspi-config nonint do_boot_behaviour
 
     - name: Enable Camera
       become: yes
       command: raspi-config nonint do_camera 1
 
     - name: Install python 3.7
-      apt:
+      package:
         name: python3
         state: present
 
