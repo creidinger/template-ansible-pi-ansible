@@ -1,6 +1,6 @@
 # template-ansible-raspberry-pi
 Is a template for setting up raspberry pi's quickly with the features you need/want enabled and for deploying src code to a pi. Please modify to your liking.
-**Overclocking is setup here, but is disabled by default. Overclocking may void your warranty on the PI**
+**Overclocking is setup here, but is disabled by default. Overclocking may void the warranty of the PI**
 
 ## Features:
 1. An Ansible playbook to provision a Pi (should be done after you enable ssh and change default password).

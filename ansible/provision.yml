@@ -93,7 +93,7 @@
       when: deploy_service
 
     # Used to allow autostart of service on pi
-    # No you no longer have to run this command.
+    # Now you no longer have to run this command.
     # sudo systemctl enable myscript.service
     - name: Allow <template>.service autostart by createing a symbolic link
       file:
