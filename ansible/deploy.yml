@@ -11,6 +11,8 @@
        copy:
            src: ../../src
            dest: /home/pi
+           owner: pi
+           group: pi
            mode: 0770
 
   post_tasks:
