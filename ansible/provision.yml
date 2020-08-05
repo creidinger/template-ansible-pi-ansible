@@ -56,6 +56,11 @@
     # raspi-config
     #####################
 
+    - name: copy .bash_profile to ~/
+      copy:
+        src: .bash_profile
+        dest: /home/pi/
+
     # - name: Disable GUI and enable CLI auto-login
     #   become: yes
     #   command: raspi-config nonint do_boot_behaviour
@@ -63,16 +68,6 @@
     - name: Enable Camera
       become: yes
       command: raspi-config nonint do_camera 1
-
-    # to control GPIO pins
-    - name: Install RPI.GPIO
-      become: yes
-      command: pip3 install RPI.GPIO
-
-    - name: copy .bash_profile to ~/
-      copy:
-        src: .bash_profile
-        dest: /home/pi/
 
     - include: overclock.yml
       when: overclock
@@ -107,22 +102,11 @@
     #####################
     # src files
     #####################
-    - name: make the ~/src directory
-      file:
-        path: /home/pi/src
-        state: directory
-        mode: 0777
-
-    - name: make the ~/src/files directory
-      file:
-        path: /home/pi/src/files
-        state: directory
-        mode: 0777
-
-    # - name: copy <filename> to ~/
+    # - name: copy src to /home/pi/
     #   copy:
-    #     src: ../src/<filename>
-    #     dest: /home/pi/
+    #       src: ../../src
+    #       dest: /home/pi
+    #       mode: 0770
 
     #####################
     # other

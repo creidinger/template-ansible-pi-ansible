@@ -7,10 +7,11 @@
   gather_facts: false
 
   tasks:
-      - name: copy ../src/<filename>
-        copy:
-            src: ../src/<filename>
-            dest: /home/pi
+     - name: copy src to /home/pi/
+       copy:
+           src: ../../src
+           dest: /home/pi
+           mode: 0770
 
   post_tasks:
       - name: reboot PIs
